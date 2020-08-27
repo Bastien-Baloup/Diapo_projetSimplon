@@ -1,8 +1,15 @@
-## Présenation Orale
+## Présentation Orale
 ### **Titre Professionnel Développeur Web et Web Mobile**
 
 ---
 ### Sommaire
+@snap[midpoint span-100]
+* #### I - Contexte du Projet
+* #### II - Organisation du Travail
+* #### III - Expression des Besoins
+* #### IV - Conception
+* #### V - Réalisations
+@snapend
 ---
 
 ### I - Contexte du Projet
@@ -237,7 +244,6 @@
 @snapend
 ---
 ### V - Réalisations
-#### A - Gestion des produits
 @snap[south span-100] 
 @ul
 - Modèle
@@ -250,8 +256,7 @@
 @snapend
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](1 - Modèle)
+#### A - Modèle
 ```jsx
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
@@ -281,8 +286,7 @@ module.exports = mongoose.model('Product', productSchema)
 @[20, zomm-15]
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](2 - Contrôleur)
+#### B - Contrôleur
 ```jsx fragment
 const Product = require('../models/product')
 require('dotenv').config('.env')
@@ -311,8 +315,7 @@ exports.getOneProduct = (req, res, next) => {
 @[11-14, zoom-15]
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](2 - Contrôleur)
+#### B - Contrôleur
 ```jsx zoom-06
 exports.createProduct = (req, res, next) => {
   const product = new Product({ ...req.body.product })
@@ -347,8 +350,7 @@ exports.createProduct = (req, res, next) => {
 @[19-22, zoom-15]
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](3 - Routes)
+#### C - Routes
 ```jsx fragment
 const express = require('express')
 const app = express()
@@ -373,8 +375,7 @@ app.use('/product', bodyParser.json(), productRoutes)
 @[15, zoom-15]
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](3 - Routes)
+#### C - Routes
 ```jsx
 const express = require('express')
 const router = express.Router()
@@ -400,8 +401,7 @@ module.exports = router
 @[16, zoom-15]
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](4 - Back-office)
+#### D - Back-office
 @snap[midpoint span-100]
 @ul
 - Page Produits
@@ -410,8 +410,7 @@ module.exports = router
 @snapend
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](4 - Back-office)
+#### D - Back-office
 @css[text-06](Page Produits)
 ```jsx fragment
 const Products = () => {
@@ -440,8 +439,7 @@ const Products = () => {
 @[9-15, zoom-15]
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](4 - Back-office)
+#### D - Back-office
 @css[text-06](ProductList)
 ```jsx fragment
 const [error, setError] = useState()
@@ -465,8 +463,7 @@ useEffect(() => {
 @[7-13, zoom-15]
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](4 - Back-office)
+#### D - Back-office
 @css[text-06](ProductList)
 ```jsx
 {products.map(
@@ -500,8 +497,7 @@ useEffect(() => {
 @[11-20, zoom-14]
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](4 - Back-office)
+#### D - Back-office
 @css[text-06](ProductForm)
 ```jsx text-06 fragment
 const id = useParams().id
@@ -542,8 +538,7 @@ useEffect(() => {
 @[19-26, zoom-15]
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](4 - Back-office)
+#### D - Back-office
 @css[text-06](ProductForm)
 ```jsx text-06
 const handleSubmit = (e) => {
@@ -575,8 +570,7 @@ const handleSubmit = (e) => {
 @[17-20, zoom-15]
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](5 - Fiches produits)
+#### E - Fiches produits
 ```jsx zoom-12 fragment 
 const { name } = useParams()
 
@@ -593,8 +587,7 @@ useEffect(() => {
 ```
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](6 - Composant Card)
+#### F - Composant Card
 ```jsx fragment
   {(product.sale !== 0) ? (
     <>
@@ -622,8 +615,7 @@ useEffect(() => {
 ```
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](7 - InstantSearch)
+#### G - InstantSearch
 @css[text-06](Composant Search)
 ```jsx fragment
 const searchClient = algoliasearch('H2YGA5NBNG', '26b1badfb8cb68a219e300f7cd17df1e')
@@ -644,8 +636,7 @@ const onSearchStateChange = newSearchState => {
 ```
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](7 - InstantSearch)
+#### G - InstantSearch
 @css[text-06](Composant Search)
 ```jsx text-06
 {
@@ -677,8 +668,7 @@ const onSearchStateChange = newSearchState => {
 @[14-22, zoom-15]
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](7 - InstantSearch)
+#### G - InstantSearch
 @css[text-06](Composant Search)
 ```jsx
 <CurrentRefinements />
@@ -698,8 +688,7 @@ const onSearchStateChange = newSearchState => {
 @[4, zoom-15]
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](7 - InstantSearch)
+#### G - InstantSearch
 @css[text-06](Composant MyInfiniteHits)
 ```jsx fragment
 const InfiniteHits = ({ hits, hasPrevious, hasMore, refinePrevious, refineNext }) => {
@@ -724,8 +713,7 @@ const InfiniteHits = ({ hits, hasPrevious, hasMore, refinePrevious, refineNext }
 ```
 ---
 ### V - Réalisations
-#### A - Gestion des produits
-@css[text-08](7 - InstantSearch)
+#### G - InstantSearch
 @css[text-06](Composant Filters)
 ```jsx fragment
 const VirtualRefinementList0 = connectRefinementList(() => null)
@@ -750,4 +738,6 @@ const Filters = ({ withCategories, searchClient, searchState, onSearchStateChang
 }
 
 ```
+---
+### VI - Synthèse et Conclusions
 ---
